@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sobre Nosotros - Fundación REDDIC</title>
+    <meta name="description" content="Conoce al equipo apasionado detrás de la Fundación REDDIC y nuestra historia.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="brand" rel="home" aria-label="Fundación REDDIC - Inicio">
+                    <img src="img/logo.png" alt="Logo de la Fundación" class="logo-mark">
+                    <div class="brand-text">
+                        <div class="brand-sub">Fundación RED DE DESARROLLO</div>
+                        <div class="brand-name">DIGITAL COLOMBIA</div>
+                    </div>
+                </a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link" aria-current="page">Sobre nosotros</a></li>
+                        <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">Nuestro propósito</a></li>
+                        <li class="nav-item"><a href="tienda.html" class="nav-link">Tienda Reddic</a></li>
+                        <li class="nav-item has-submenu">
+                            <a href="nuestras-areas.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Nuestras áreas</a>
+                            <ul class="submenu" aria-label="Submenú de Nuestras áreas">
+                                <li class="nav-item"><a href="nuestras-areas.html#talleres" class="nav-link">Talleres de aprendizaje</a></li>
+                                <li class="nav-item"><a href="sobre-nosotros.html#equipo" class="nav-link">Nuestro Equipo</a></li>
+                                <li class="nav-item"><a href="nuestras-areas.html#juridico" class="nav-link">Jurídico</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                        <li class="nav-item donate"><a href="donaciones.html" class="nav-link">Donaciones</a></li>
+                    </ul>
+                    <button class="burger" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false" id="hamburger">
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="nav-menu" role="dialog" aria-modal="true" aria-hidden="true">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link" aria-current="page">Sobre nosotros</a></li>
+            <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">Nuestro propósito</a></li>
+            <li class="nav-item"><a href="tienda.html" class="nav-link">Tienda Reddic</a></li>
+            <li class="nav-item has-submenu">
+                <a href="nuestras-areas.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Nuestras áreas</a>
+                <ul class="submenu">
+                    <li class="nav-item"><a href="nuestras-areas.html#talleres" class="nav-link">Talleres de aprendizaje</a></li>
+                    <li class="nav-item"><a href="sobre-nosotros.html#equipo" class="nav-link">Nuestro Equipo</a></li>
+                    <li class="nav-item"><a href="nuestras-areas.html#juridico" class="nav-link">Jurídico</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li class="nav-item donate"><a href="donaciones.html" class="nav-link">Donaciones</a></li>
+        </ul>
+    </div>
+
+    <main id="main" class="site-main" role="main">
+        <!-- Encabezado de la página -->
+        <section class="shop-header">
+            <div class="container">
+                <h1 class="shop-title">Sobre Nosotros</h1>
+                <p class="shop-subtitle">Somos un grupo de profesionales comprometidos con el desarrollo social y económico de Colombia a través de la transformación digital.</p>
+            </div>
+        </section>
+
+        <!-- Contenido principal de la página -->
+        <div class="container">
+            <div class="page-section">
+                <div class="section-inner">
+                    <article class="single-page-article">
+                        <!-- NUESTRO EQUIPO -->
+                        <section id="equipo">
+                            <h2>Nuestro Equipo</h2>
+                            <p>Conoce a las personas apasionadas que hacen posible nuestra misión y trabajan para generar un cambio real.</p>
+                            <div class="team-grid">
+                                <!-- Tarjeta de Miembro 1 -->
+                                <div class="team-card">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=256&h=256&fit=crop" alt="Foto de Ana Pérez" class="team-card-image">
+                                    <div class="team-card-overlay">
+                                        <h3 class="team-member-name">Ana Pérez</h3>
+                                        <p class="team-member-title">Directora Ejecutiva</p>
+                                    </div>
+                                </div>
+                                <!-- Tarjeta de Miembro 2 -->
+                                <div class="team-card">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=256&h=256&fit=crop" alt="Foto de Carlos Gómez" class="team-card-image">
+                                    <div class="team-card-overlay">
+                                        <h3 class="team-member-name">Carlos Gómez</h3>
+                                        <p class="team-member-title">Coordinador de Proyectos</p>
+                                    </div>
+                                </div>
+                                <!-- Tarjeta de Miembro 3 -->
+                                <div class="team-card">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=256&h=256&fit=crop" alt="Foto de Laura Rodríguez" class="team-card-image">
+                                    <div class="team-card-overlay">
+                                        <h3 class="team-member-name">Laura Rodríguez</h3>
+                                        <p class="team-member-title">Especialista en Desarrollo</p>
+                                    </div>
+                                </div>
+                                <!-- Tarjeta de Miembro 4 -->
+                                <div class="team-card">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&fit=crop" alt="Foto de Javier Ortiz" class="team-card-image">
+                                    <div class="team-card-overlay">
+                                        <h3 class="team-member-name">Javier Ortiz</h3>
+                                        <p class="team-member-title">Asesor Jurídico</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Únete a Nuestra Causa</h2>
+                <p class="cta-text">Tu apoyo es fundamental para seguir impulsando a los emprendedores de Colombia. Cada contribución nos acerca más a nuestra meta.</p>
+                <a href="donaciones.html" class="btn btn-primary cta-btn">Quiero Donar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- ... Contenido del footer ... -->
+            </div>
+            <div class="footer-bottom-bar">
+                <p>&copy; <span id="current-year"></span> Fundación RED DE DESARROLLO DIGITAL COLOMBIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de Donaciones -->
+    <a href="donaciones.html" class="floating-donate-btn">Donaciones</a>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fundación Acción Interna</title>
+    <meta name="description" content="Organización creada en 2012 con el objetivo de dignificar y mejorar la calidad de vida de la población carcelaria y pospenada de Colombia.">
+    
+    <!-- Favicon (espacio para el ícono de la web) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header reorganizado -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="brand" rel="home" aria-current="page" aria-label="Fundación REDDIC - Inicio">
+                    <img src="img/logo.png" alt="Logo de la Fundación" class="logo-mark">
+                    <div class="brand-text">
+                        <div class="brand-sub">Fundación RED DE DESARROLLO</div>
+                        <div class="brand-name">DIGITAL COLOMBIA</div>
+                    </div>
+                </a>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">Sobre nosotros</a></li>
+                        <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">Nuestro propósito</a></li>
+                        <li class="nav-item"><a href="tienda.html" class="nav-link">Tienda Reddic</a></li>
+                        <li class="nav-item has-submenu">
+                            <a href="nuestras-areas.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Nuestras áreas</a>
+                            <ul class="submenu" aria-label="Submenú de Nuestras áreas">
+                                <li class="nav-item"><a href="nuestras-areas.html#talleres" class="nav-link">Talleres de aprendizaje</a></li>
+                                <li class="nav-item"><a href="sobre-nosotros.html#equipo" class="nav-link">Nuestro Equipo</a></li>
+                                <li class="nav-item"><a href="nuestras-areas.html#juridico" class="nav-link">Jurídico</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                        <li class="nav-item donate"><a href="donaciones.html" class="nav-link">Donaciones</a></li>
+                    </ul>
+                    <button class="burger" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false" id="hamburger">
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="nav-menu" role="dialog" aria-modal="true" aria-hidden="true">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">Sobre nosotros</a></li>
+            <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">Nuestro propósito</a></li>
+            <li class="nav-item"><a href="tienda.html" class="nav-link">Tienda Reddic</a></li>
+            <li class="nav-item has-submenu">
+                <a href="nuestras-areas.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Nuestras áreas</a>
+                <ul class="submenu">
+                    <li class="nav-item"><a href="nuestras-areas.html#talleres" class="nav-link">Talleres de aprendizaje</a></li>
+                    <li class="nav-item"><a href="sobre-nosotros.html#equipo" class="nav-link">Nuestro Equipo</a></li>
+                    <li class="nav-item"><a href="nuestras-areas.html#juridico" class="nav-link">Jurídico</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li class="nav-item donate"><a href="donaciones.html" class="nav-link">Donaciones</a></li>
+        </ul>
+    </div>
+
+    <main id="main" class="site-main" role="main">
+        <!-- HERO CARRUSEL INTERACTIVO -->
+        <section class="hero swiper-container" id="inicio" aria-label="Hero Carousel">
+            <video class="hero-video" src="https://fundacionaccioninterna.org/wp-content/uploads/2023/07/video-web-FAI.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
+            <div class="hero-overlay"></div>
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="hero-grid">
+                        <div class="container">
+                            <div class="hero-left">
+                                <span class="tagline">Programa 100% social</span>
+                                <h1 class="hero-title">
+                                    <span class="title-line-1">Fundación</span>
+                                    <span class="title-line-2">Red de Desarrollo</span>
+                                    <span class="title-line-3">Digital Colombia</span>
+                                </h1>
+                                <p class="hero-lead">
+Proporcionamos acceso a herramientas y recursos digitales de última generación que permiten a los emprendedores desarrollar sus habilidades comerciales de manera virtual.                    </p>
+                                <div class="buttons">
+                                    <a href="donaciones.html" class="btn btn-primary">Quiero donar</a>
+                                    <a href="#programas" class="btn btn-outline">Ver programas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 (Falso) -->
+                <div class="swiper-slide">
+                    <div class="hero-grid">
+                        <div class="container">
+                            <div class="hero-left">
+                                <span class="tagline">Innovación y Crecimiento</span>
+                                <h1 class="hero-title">
+                                    <span class="title-line-1">Impulsando</span>
+                                    <span class="title-line-2">el Futuro</span>
+                                    <span class="title-line-3">del Emprendimiento</span>
+                                </h1>
+                                <p class="hero-lead">Texto de ejemplo para el segundo slide. Aquí puedes describir otra faceta de tu misión o un programa específico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 (Falso) -->
+                <div class="swiper-slide">
+                    <div class="hero-grid">
+                        <div class="container">
+                            <div class="hero-left">
+                                <span class="tagline">Únete a la Causa</span>
+                                <h1 class="hero-title">Tu Apoyo <span class="highlight">Transforma</span> Realidades</h1>
+                                <p class="hero-lead">Descubre cómo tu contribución puede marcar la diferencia en la vida de cientos de emprendedores en todo el país.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <!-- Nuestros Programas Section -->
+        <section id="programas" class="page-section programas-section">
+            <div class="container">
+                <h2>Nuestros Programas</h2>
+                <p>Impulsamos el cambio a través de tres pilares fundamentales diseñados para empoderar y fortalecer a los emprendedores de Colombia.</p>
+                <div class="programas-grid">
+                    <!-- Card 1: Talleres -->
+                    <div class="programa-card">
+                        <div class="programa-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l-10 5 10 5 10-5-10-5zm-10 7v6l10 5 10-5v-6l-10 5-10-5z"/></svg>
+                        </div>
+                        <h3 class="programa-card-title">Talleres de Aprendizaje</h3>
+                        <p class="programa-card-text">Capacitaciones prácticas en marketing digital, e-commerce y finanzas para potenciar negocios en el entorno actual.</p>
+                        <a href="nuestras-areas.html#talleres" class="programa-card-link">Saber más</a>
+                    </div>
+                    <!-- Card 2: Asesoría Jurídica -->
+                    <div class="programa-card">
+                        <div class="programa-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5L12 2zm0 10.5L4.5 8 12 5.5 19.5 8 12 12.5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
+                        </div>
+                        <h3 class="programa-card-title">Asesoría Jurídica</h3>
+                        <p class="programa-card-text">Acompañamiento experto para la formalización de empresas, registro de marcas y cumplimiento normativo.</p>
+                        <a href="nuestras-areas.html#juridico" class="programa-card-link">Saber más</a>
+                    </div>
+                    <!-- Card 3: Nuestro Equipo -->
+                    <div class="programa-card">
+                        <div class="programa-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                        <h3 class="programa-card-title">Nuestro Equipo</h3>
+                        <p class="programa-card-text">Un grupo de profesionales apasionados y comprometidos con generar un impacto real y sostenible en la sociedad.</p>
+                        <a href="sobre-nosotros.html#equipo" class="programa-card-link">Conócelos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objeto Social Section -->
+        <section class="objetivo-social-section">
+            <div class="container">
+                <div class="objetivo-social-content">
+                    <h2 class="objetivo-social-title">Objeto Social</h2>
+                    <p class="objetivo-social-text">
+                        Desarrollar planes, programas, proyectos y todas las actividades que ayuden a fortalecer
+                        emprendimientos en todos los aspectos, incorporando las herramientas digitales y profundizando
+                        en las nuevas tecnologías con alcances reales y necesarios a las exigencias del mercado.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Latest News Section -->
+    <section id="noticias" class="page-section news-section">
+        <div class="container">
+            <h2>Últimas Noticias</h2>
+            <p>Mantente al día con nuestras últimas iniciativas, historias de éxito y eventos.</p>
+            <div class="news-grid">
+                <!-- Article 1 -->
+                <article class="news-card">
+                    <a href="noticia-detalle.html" class="news-card-link">
+                        <div class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=870&auto=format&fit=crop" alt="Personas colaborando en un taller de emprendimiento.">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-meta">
+                                <span class="news-card-category">Talleres</span>
+                                <span class="news-card-date">15 de Octubre, 2023</span>
+                            </div>
+                            <h3 class="news-card-title">Nuevo Taller de Emprendimiento Digital</h3>
+                            <p class="news-card-excerpt">Lanzamos un nuevo programa de capacitación enfocado en herramientas de marketing digital para emprendedores.</p>
+                            <span class="news-card-readmore">Leer más →</span>
+                        </div>
+                    </a>
+                </article>
+                <!-- Article 2 -->
+                <article class="news-card">
+                    <a href="#" class="news-card-link">
+                        <div class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1032&auto=format&fit=crop" alt="Dos personas dándose la mano para cerrar una alianza estratégica.">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-meta">
+                                <span class="news-card-category">Alianzas</span>
+                                <span class="news-card-date">02 de Octubre, 2023</span>
+                            </div>
+                            <h3 class="news-card-title">Alianza Estratégica para el Crecimiento</h3>
+                            <p class="news-card-excerpt">Celebramos una nueva alianza con una empresa líder para expandir el alcance de nuestros programas.</p>
+                            <span class="news-card-readmore">Leer más →</span>
+                        </div>
+                    </a>
+                </article>
+                <!-- Article 3 -->
+                <article class="news-card">
+                    <a href="#" class="news-card-link">
+                        <div class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=870&auto=format&fit=crop" alt="Una mujer sonriendo, representando una historia de éxito.">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-meta">
+                                <span class="news-card-category">Historias de Éxito</span>
+                                <span class="news-card-date">25 de Septiembre, 2023</span>
+                            </div>
+                            <h3 class="news-card-title">Historias que Inspiran: El Caso de María</h3>
+                            <p class="news-card-excerpt">Conoce la historia de superación de María, una de las beneficiarias de nuestro programa de mentorías.</p>
+                            <span class="news-card-readmore">Leer más →</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            <div class="section-footer-link">
+                <a href="#" class="btn btn-outline">Ver Todas las Noticias</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Allied Brands Section -->
+    <section id="marcas-aliadas" class="page-section allied-brands-section">
+        <div class="container">
+            <h2 class="allied-brands-title">Nuestras Marcas Aliadas</h2>
+            <div class="swiper-container allied-brands-carousel">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="img/logo.png" alt="Logo Marca Aliada 1">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="img/logo.png" alt="Logo Marca Aliada 2">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="img/logo.png" alt="Logo Marca Aliada 3">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <img src="img/logo.png" alt="Logo Marca Aliada 4">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <img src="img/logo.png" alt="Logo Marca Aliada 5">
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide">
+                        <img src="img/logo.png" alt="Logo Marca Aliada 6">
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Transforma Vidas con Tu Donación</h2>
+                <p class="cta-text">Tu apoyo es fundamental para seguir creando segundas oportunidades. Cada contribución, sin importar el tamaño, nos ayuda a fortalecer nuestros programas y a cambiar el futuro de muchas personas.</p>
+                <a href="donaciones.html" class="btn btn-primary cta-btn">Donar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer reorganizado -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Columna 1: Logo y Descripción -->
+                <div class="footer-column">
+                    <a href="index.html" class="footer-brand-link">
+                        <img src="img/logo.png" alt="Logo de la Fundación" class="footer-logo">
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-sub">Fundación RED DE DESARROLLO</div>
+                            <div class="footer-brand-name">DIGITAL COLOMBIA</div>
+                        </div>
+                    </a>
+                    <p class="footer-description">Dignificamos y mejoramos la calidad de vida de la población carcelaria y pospenada en Colombia, <a href="donaciones.html" class="inline-donate-link">generando segundas oportunidades</a>.</p>
+                </div>
+
+                <!-- Columna 2: Enlaces de Navegación -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navegación</h3>
+                    <ul class="footer-nav">
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="nuestro-proposito.html">Nuestro propósito</a></li>
+                        <li><a href="tienda.html">Tienda Reddic</a></li>
+                        <li><a href="donaciones.html">Donar</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contacto</h3>
+                    <p class="footer-description">
+                        Bogotá, Colombia<br>
+                        Email: <a href="mailto:info@reddic.org">info@reddic.org</a><br>
+                        Tel: <a href="tel:+5712345678">+57 (1) 234-5678</a>
+                    </p>
+                </div>
+
+                <!-- Columna 4: Redes Sociales -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                        <a href="#" aria-label="Instagram" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.141 0-3.506.011-4.73.067-2.695.123-3.995 1.424-4.118 4.118-.056 1.224-.067 1.585-.067 4.73s.011 3.506.067 4.73c.123 2.695 1.423 3.995 4.118 4.118 1.224.056 1.585.067 4.73.067s3.506-.011 4.73-.067c2.695-.123 3.995-1.424 4.118-4.118.056-1.224.067-1.585.067-4.73s-.011-3.506-.067-4.73c-.123-2.695-1.423-3.995-4.118-4.118-1.224-.056-1.585-.067-4.73-.067zM12 8.292c-2.04 0-3.708 1.668-3.708 3.708s1.668 3.708 3.708 3.708 3.708-1.668 3.708-3.708-1.668-3.708-3.708-3.708zm0 5.976c-1.254 0-2.268-1.014-2.268-2.268s1.014-2.268 2.268-2.268 2.268 1.014 2.268 2.268-1.014 2.268-2.268 2.268zm4.332-6.636c-.598 0-1.082.484-1.082 1.082s.484 1.082 1.082 1.082 1.082-.484 1.082-1.082-.484-1.082-1.082-1.082z"/></svg></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    </div>
+                    <a href="donaciones.html" class="footer-donate-btn">Donaciones</a>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <p>&copy; <span id="current-year"></span> Fundación RED DE DESARROLLO DIGITAL COLOMBIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de Donaciones -->
+    <a href="donaciones.html" class="floating-donate-btn">Donaciones</a>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

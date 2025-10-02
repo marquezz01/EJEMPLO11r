@@ -1,0 +1,1730 @@
+/* 📑 Estructura y estilos principales */
+:root {
+    --page-bg: #ffffff; /* Fondo blanco como solicitado */
+    --surface: #ffffff;
+    --text: #090d1b;
+    --muted: #6b6b6b;
+    --accent: #e52423; /* Rojo principal */
+    --accent-dark: #c01f1e; /* Rojo más oscuro para variaciones */
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    --radius: 8px;
+    --shadow-1: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-2: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Habilitar scroll suave en toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--page-bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+/* 🤝 ALLIED BRANDS SECTION */
+.allied-brands-section {
+    padding: 3rem 0; /* Reducimos el padding para hacerla más compacta */
+    background-color: var(--surface);
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.allied-brands-title {
+    text-align: center;
+    font-size: 1.5rem; /* Título más pequeño */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: var(--spacing-lg); /* Espacio inferior */
+    margin-left: auto; /* Asegura el centrado del bloque */
+    margin-right: auto; /* Asegura el centrado del bloque */
+}
+
+.allied-brands-carousel .swiper-wrapper {
+    /* Asegura una transición lineal para el efecto marquesina */
+    transition-timing-function: linear !important;
+}
+
+.allied-brands-carousel .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allied-brands-carousel .swiper-slide img {
+    max-height: 50px; /* Hacemos los logos más pequeños */
+    width: auto;
+    filter: grayscale(100%); /* Logos en escala de grises por defecto */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.allied-brands-carousel .swiper-slide:hover img {
+    filter: grayscale(0%); /* Color original en hover */
+    opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Contenedor general (.wrap) */
+.container {
+    width: 100%;
+    max-width: 1280px; /* Aumentamos el ancho para separar los elementos */
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* 🧭 Header y navegación */
+.site-header {
+    /* Menú estático con fondo blanco */
+    background-color: var(--surface);
+    box-shadow: var(--shadow-1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+    transition: transform 0.4s ease, background-color 0.4s ease; /* Añadimos transform a la transición */
+}
+
+/* Clase para ocultar el header */
+.site-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px; /* Añadimos padding para el fondo */
+    border-radius: var(--radius); /* Redondeamos las esquinas */
+    transition: background-color 0.4s ease; /* Transición para el fondo */
+}
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    transition: filter 0.4s ease; /* Transición para el filtro del logo */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+}
+
+.brand-text .brand-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-size: 0.8rem;
+    transition: color 0.4s ease; /* Transición para el color */
+    letter-spacing: 1px;
+}
+
+.brand-text .brand-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1rem;    
+    transition: color 0.4s ease; /* Transición para el color */
+    line-height: 1.2;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0; /* Eliminamos el gap para un control preciso con bordes */
+}
+
+.nav-list .nav-link {
+    display: block; /* Asegura que el enlace ocupe todo el espacio del <li> */
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 16px 24px;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-left: 1px solid #e9ecef;
+}
+
+.nav-list .nav-item:last-of-type .nav-link {
+    border-right: 1px solid #e9ecef;
+}
+
+.nav-list .nav-link:hover,
+.nav-list .nav-link:focus {
+    color: var(--accent);
+    background-color: #f8f9fa; /* Fondo sutil para hover/focus */
+    outline: none; /* Quitamos el outline por defecto para poner uno personalizado si es necesario */
+}
+
+/* Estilo para el enlace de la página actual */
+.nav-list .nav-link[aria-current="page"] {
+    color: var(--accent);
+    font-weight: 700;
+    background-color: rgba(229, 36, 35, 0.05); /* Fondo muy sutil para la página activa */
+    box-shadow: inset 0 -3px 0 0 var(--accent); /* Indicador de página activa */
+}
+
+.nav-item.donate a {
+    background-color: var(--accent);
+    color: white;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-left: none; /* El botón de donar no necesita borde izquierdo */
+    border-right: 1px solid var(--accent);
+}
+
+.nav-item.donate a:hover,
+.nav-item.donate a:focus {
+    background-color: var(--accent-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Estilo para el botón de donar cuando es la página actual */
+.nav-item.donate a[aria-current="page"] {
+    background-color: var(--accent-dark);
+    color: var(--accent);
+}
+
+/* Submenú */
+.has-submenu > a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.caret {
+    display: none; /* Eliminamos el triángulo como se solicitó */
+}
+.has-submenu:hover .caret {
+    transform: rotate(180deg);
+}
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--surface);
+    list-style: none;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius);
+    border-top: 3px solid var(--accent); /* Ancla visual elegante */
+    box-shadow: var(--shadow-2);
+    min-width: 230px; /* Un poco más ancho */
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 15px); /* Un poco más de distancia inicial */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 12px; /* Aumenta el espacio entre el item y el submenú */
+}
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0); /* Posición final */
+}
+.has-submenu:hover > .nav-link {
+    color: var(--accent); /* Mantiene el enlace padre resaltado */
+    background-color: transparent;
+}
+.submenu .nav-link {    font-size: 14px;
+    text-transform: none;
+    font-weight: 600;
+    padding: 12px 16px; /* Más padding interno */
+    border-radius: 4px;
+}
+.submenu .nav-link::after {
+    display: none; /* Ocultamos el efecto de subrayado en el submenú */
+} 
+.submenu .nav-link:hover,
+.submenu .nav-link:focus {
+    background-color: rgba(229, 36, 35, 0.1);
+    color: var(--accent);
+    /* No se necesita transform aquí */
+}
+
+/* ✨ Efecto Hover para el logo/marca */
+.brand:hover {
+    background-color: var(--accent); /* Se mantiene el hover */
+}
+
+/* Cambia el color del texto y logo a blanco en hover del logo/marca */
+.brand:hover .brand-text .brand-sub,
+.brand:hover .brand-text .brand-name {
+    color: white;
+}
+
+.brand:hover .logo-mark {
+    filter: brightness(0) invert(1); /* Convierte el logo a blanco */
+}
+
+/* 📱 Navegación móvil */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+}
+.burger-bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animación del icono de hamburguesa a "X" */
+.burger.active .burger-bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+.burger.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+.burger.active .burger-bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none; /* Oculto por defecto */
+}
+
+/* 📄 Secciones principales (.page-section) */
+.page-section {
+    padding: 7rem 0; /* Aumentamos aún más el espaciado vertical */
+}
+.page-section section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-inner {
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-1);
+}
+.page-section h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: left; /* Alineación a la izquierda para un look más editorial */
+    margin-bottom: 8px; /* Menos espacio inferior */
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid #e9ecef; /* Línea sutil debajo del título */
+}
+
+.section-footer-link {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: 0;
+}
+
+/* 📍 Footer */
+.site-footer {
+    background-color: #1c1c1c;
+    color: var(--muted);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid #333; /* Borde sutil para separar del contenido */
+}
+
+.footer-main {
+    display: grid;
+    /* Layout de 4 columnas en desktop, con la primera columna más ancha */
+    grid-template-columns: 1.5fr 1fr 1fr 1fr; 
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid #333;
+}
+
+.footer-column .footer-heading {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 1px;
+}
+
+.footer-column p {
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.footer-nav a {
+    padding: 4px 0;
+    color: var(--muted);
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    color: var(--accent);
+    outline: none;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.social-links a {
+    color: #888; /* Color gris para los iconos */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-links a:hover {
+    transform: translateY(-2px); /* Se mantiene el hover */
+}
+.social-links a:hover, .social-links a:focus {
+    color: var(--accent-dark); /* Usamos el rojo oscuro para el hover */
+}
+.social-links svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid #333;
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 700;
+    color: white;
+}
+
+.footer-brand-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-logo {
+    width: 48px;
+    height: 48px;
+    /* Asumimos que tendrás un logo en blanco para el footer */
+    filter: brightness(0) invert(1); 
+}
+
+.footer-brand-text .footer-brand-sub,
+.footer-brand-text .footer-brand-name {
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.footer-brand-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+.footer-brand-name {
+    font-weight: 700;
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    color: #d9d9d9; /* Un gris más claro para suavizar el contraste */
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+/* Botón de donaciones en el footer */
+.footer-donate-btn {
+    background-color: white;
+    color: var(--accent);
+    padding: 5px 5px; /* Padding ajustado para alinear altura con iconos */
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.5; /* Asegura la alineación vertical del texto */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    animation: pulse-footer 2s infinite; /* Aplicamos la animación de pulso */
+}
+.footer-donate-btn:hover,
+.footer-donate-btn:focus {
+    background-color: var(--accent);
+    color: white;
+    transform: scale(1.05);
+    animation-play-state: paused; /* Pausamos la animación en hover para que prevalezca el efecto de hover */
+}
+
+/* Enlace de donación dentro del texto del footer */
+.inline-donate-link {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* 🎬 HERO CARRUSEL INTERACTIVO */
+.hero.swiper-container {
+    position: relative;
+    min-height: 95vh; /* Aumentamos la altura para un look más inmersivo */
+    color: white;
+    overflow: hidden;
+}
+
+.hero .swiper-slide {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xl) 0;
+}
+/* Animación de entrada para el contenido del slide activo */
+.swiper-slide-active .hero-left > * {
+    animation: fadeInUp 0.8s both;
+}
+.swiper-slide-active .tagline { animation-delay: 0.3s; }
+.swiper-slide-active .hero-title { animation-delay: 0.5s; }
+.swiper-slide-active .hero-lead { animation-delay: 0.7s; }
+.swiper-slide-active .buttons { animation-delay: 0.9s; }
+
+/* Animación de entrada para el contenido del Hero */
+.hero .hero-left > * {
+    animation: fadeInUp 0.8s both;
+}
+.hero .tagline { animation-delay: 0.2s; }
+.hero .hero-title { animation-delay: 0.4s; }
+.hero .hero-lead { animation-delay: 0.6s; }
+.hero .buttons { animation-delay: 0.8s; }
+
+/* HERO CON VIDEO */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el espacio */
+  transform: translate(-50%, -50%);
+  z-index: -2; /* Detrás de todo */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(9, 13, 27, 0.6); /* Overlay oscuro para legibilidad */
+  z-index: -1; /* Sobre el video, debajo del contenido */
+}
+
+/* ✨ Animación de entrada para secciones */
+.page-section {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    margin: 0; /* Reset margin as we are using padding now */
+}
+.section-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+/* Fin de animación de entrada */
+
+/* 📐 Responsive */
+@media (max-width: 900px) {
+    .main-nav .nav-list {
+        display: none;
+    }
+    .burger {
+        display: flex;
+    }
+    
+    /* Ajustes para el header en móvil */
+    .site-header .container {
+        padding-left: var(--spacing-md); /* Restauramos el padding del contenedor */
+    }
+    .brand {
+        margin-left: 0; /* Eliminamos el margen negativo */
+    }
+
+    /* Responsive para Hero */
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+    .hero-side {
+        margin-top: 20px;
+    }
+
+    /* Fin de ajustes para el header en móvil */
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100%;
+        background-color: var(--surface);
+        box-shadow: var(--shadow-2);
+        padding: var(--spacing-lg);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(100%);
+        z-index: 999; /* Asegura que el menú esté sobre el overlay */
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    .mobile-menu.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+    .mobile-menu .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+        width: 100%;
+    }
+    .mobile-menu .nav-link {
+        font-size: 18px;
+        padding: 12px 0;
+        width: 100%;
+    }
+    .mobile-menu .submenu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        /* Ocultamos el submenú por defecto en móvil */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        margin-top: 0;
+        background-color: transparent; /* Evita que tenga fondo blanco */
+    }
+    .mobile-menu .submenu.submenu-open {
+        max-height: 200px; /* Altura suficiente para mostrar los items */
+    }
+    .mobile-menu .has-submenu:hover .submenu {
+        /* No hacer nada en hover en móvil */
+    }
+
+    /* Responsive para Misión y Visión */
+    .mision-vision {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive para Equipo */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+        gap: var(--spacing-md);
+    }
+
+    /* Responsive para Tienda */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive para Página de Producto */
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive para Footer */
+    .footer-main {
+        /* 2 columnas en tabletas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Responsive para Noticias */
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+ .hero-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+ }
+
+ .hero-left {
+    max-width: 650px;
+ }
+
+ .tagline {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+ }
+
+ .hero-title {
+    /* Ajustes para el contenedor del título tipográfico */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea a la izquierda */
+    gap: 0;
+    line-height: 1.0; /* Juntamos las líneas */
+    font-weight: 700; /* Peso base */
+ }
+
+ .hero-title span {
+    display: block;
+    text-transform: uppercase;
+ }
+
+ .title-line-1 {
+    font-family: 'Josefin Sans', sans-serif; /* Fuente más estilizada */
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.85); /* Un poco más tenue */
+    margin-bottom: 8px;
+ }
+
+ .title-line-2,
+ .title-line-3 {
+    font-size: clamp(2.8rem, 6vw, 4.2rem); /* Más grande y audaz */
+ }
+
+ .title-line-3 {
+    color: var(--accent); /* Color de acento para la última línea */
+ }
+
+ .hero-title .highlight {
+    color: var(--accent);
+ }
+
+ .hero-lead {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    max-width: 550px;
+ }
+
+ .buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+ }
+
+ .btn {
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+ }
+
+ .btn-primary {
+    background: var(--accent);
+    color: white;
+ }
+ .btn-primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+ }
+
+ .btn-outline {
+    border-color: var(--accent);
+    color: white;
+ }
+ .btn-outline:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+ }
+
+/* Modificación para que .btn-outline funcione en fondos claros */
+.news-section .btn-outline,
+.section-inner .btn-outline {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.news-section .btn-outline:hover,
+.section-inner .btn-outline:hover {
+    color: white;
+}
+
+/* Paginación del Hero Carousel */
+.hero .swiper-pagination {
+    position: absolute;
+    bottom: var(--spacing-lg) !important; /* !important para sobreescribir estilos de swiper */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.hero .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    margin: 0 6px !important;
+}
+.hero .swiper-pagination-bullet-active {
+    background-color: var(--accent);
+    width: 16px;
+    height: 16px;
+    transform: translateY(-2px);
+}
+/* SOBRE NOSOTROS */
+.page-section h2 { /* Unificado con el estilo anterior */
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: left; /* Alineación a la izquierda para un look más editorial */
+    margin-bottom: var(--spacing-sm); /* Increased space for better breathing room */
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid #e9ecef; /* Línea sutil debajo del título */
+}
+
+/* Botón flotante de donaciones */
+.floating-donate-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent);
+    color: white;
+    padding: 16px 32px; /* Hacemos el botón más grande */
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    z-index: 1001; /* Asegura que esté sobre otros elementos */
+    box-shadow: var(--shadow-2); /* Sombra estándar */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.floating-donate-btn:hover,
+.floating-donate-btn:focus {
+    transform: scale(1.05);
+    background-color: var(--accent-dark);
+}
+
+/* Clase para invertir colores sobre fondos rojos */
+.floating-donate-btn.invert-colors {
+    background-color: white;
+    color: var(--accent);
+}
+.floating-donate-btn.invert-colors:hover,
+.floating-donate-btn.invert-colors:focus {
+    background-color: #f1f1f1; /* Un blanco un poco más oscuro para el hover */
+    color: var(--accent-dark);
+}
+
+/* Animación de cambio de color */
+@keyframes color-cycle {
+    0%, 100% { background-color: var(--accent); box-shadow: 0 0 20px rgba(229, 36, 35, 0.7); }
+    50% { background-color: var(--accent-dark); box-shadow: 0 0 20px rgba(192, 31, 30, 0.7); }
+}
+
+
+
+/* DECORACIONES */
+.decor-line {
+  width: 90px; height: 4px;
+  background: var(--accent);
+  display: inline-block;
+  border-radius: 2px;
+}
+.decor-box {
+  width: 40px; height: 40px;
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  border-radius: 8px;
+}
+.decor-box { background: var(--accent); }
+.decor-box.alt { background: var(--accent-dark); }
+
+/* Animación para las decoraciones del Hero */
+@keyframes slow-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Keyframes para la animación de entrada del Hero */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación de pulso para el botón del footer */
+@keyframes pulse-footer {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% { transform: scale(1); }
+}
+
+/* 🧑‍🤝‍🧑 NUESTRO EQUIPO */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.team-card {
+    background-color: var(--surface);
+    border-radius: 12px; /* Un poco más redondeado */
+    overflow: hidden;
+    box-shadow: var(--shadow-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Necesario para el overlay */
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+}
+
+.team-card:hover .team-card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.team-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(9, 13, 27, 0.9) 0%, rgba(9, 13, 27, 0) 100%);
+    color: white;
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+    opacity: 1; /* Overlay siempre visible */
+    transform: translateY(30%); /* Parcialmente oculto por defecto */
+    transition: all 0.4s ease;
+}
+
+.team-member-name {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+    color: white;
+}
+
+.team-member-title {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85); /* Color más claro para mejor contraste */
+}
+
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+/* 🛍️ PÁGINA DE TIENDA */
+.shop-header {
+    background-color: #f8f9fa; /* Un fondo gris muy claro */
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid #e9ecef;
+}
+
+.shop-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.shop-subtitle {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.product-card {
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+}
+
+.product-image-container {
+    width: 100%;
+    padding-top: 100%; /* Aspect ratio 1:1 */
+    position: relative;
+    background-color: #f1f1f1;
+}
+
+.product-image-container a {
+    display: block;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-info {
+    padding: var(--spacing-md);
+    text-align: center; /* Centramos el texto para una mejor alineación visual */
+    flex-grow: 1;
+    display: flex; /* Asegura que el contenedor use flexbox */
+    flex-direction: column;
+    justify-content: space-between; /* Alinea el contenido verticalmente */
+}
+
+.product-card-actions {
+    padding: var(--spacing-md);
+    padding-top: 0;
+    margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.product-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-title a:hover {
+    color: var(--accent);
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    /* margin-bottom: var(--spacing-md); */ /* Eliminado para un mejor control del espaciado */
+}
+
+.product-btn {
+    width: 100%;
+    position: relative; /* Necesario para el pseudo-elemento del checkmark */
+    overflow: hidden;
+}
+
+/* Estilos para la animación del botón "Añadir al carrito" */
+.product-btn span {
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    display: inline-block; /* Necesario para la transformación */
+}
+
+.product-btn.added {
+    background-color: #28a745; /* Verde de éxito */
+    pointer-events: none; /* Evita clics múltiples */
+}
+
+.product-btn.added span {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.product-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 20px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transition: transform 0.3s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-btn.added::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
+/* 📦 PÁGINA DE DETALLE DE PRODUCTO */
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    /* text-align: right; */ /* Revertimos a la alineación por defecto (izquierda) */
+    /* text-align: right; */ /* Revertimos a la alineación por defecto (izquierda) */
+    gap: var(--spacing-lg);
+}
+
+.product-gallery .main-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-1);
+    background-color: #f1f1f1;
+}
+
+.thumbnail-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.thumbnail-images .thumbnail {
+    width: 100%;
+    border-radius: var(--radius);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail-images .thumbnail:hover {
+    opacity: 1;
+}
+
+.thumbnail-images .thumbnail.active {
+    opacity: 1;
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(229, 36, 35, 0.5);
+}
+
+.product-main-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.product-details .product-detail-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 0; /* Remove default h1 margin */
+}
+
+.product-details .product-detail-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0;
+}
+
+.product-details .product-short-description {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    /* justify-content: flex-end; */ /* Revertimos a la alineación por defecto (izquierda) */
+    flex-wrap: wrap;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.quantity-selector label {
+    font-weight: 600;
+}
+
+.quantity-selector input {
+    width: 60px;
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    -moz-appearance: textfield; /* Oculta flechas en Firefox */
+}
+
+/* Oculta las flechas de incremento/decremento en Chrome, Safari, Edge */
+.quantity-selector input::-webkit-outer-spin-button,
+.quantity-selector input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.product-long-description {
+    border-top: 1px solid #e9ecef;
+    padding-top: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
+}
+
+.product-long-description h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-long-description p,
+.product-long-description ul {
+    color: var(--muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.product-long-description ul {
+    /* padding-right: var(--spacing-md); */ /* Revertimos a la alineación por defecto */
+    padding-left: var(--spacing-md);
+}
+
+.related-products {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid #e9ecef;
+}
+
+.related-products h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* 📣 CALL TO ACTION (CTA) SECTION */
+.cta-section {
+    background-color: var(--accent);
+    color: white;
+    padding: 3rem 0; /* Reducimos el padding para hacer la sección menos alta */
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Hacemos el título un poco más pequeño */
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cta-btn {
+    background-color: white;
+    color: var(--accent);
+    font-size: 1.1rem;
+    padding: 16px 40px;
+}
+
+/* 📰 LATEST NEWS SECTION */
+.news-section {
+    background-color: #f8f9fa;
+    /* Padding is handled by .page-section */
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.news-card {
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+}
+
+.news-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card-image {
+    width: 100%;
+    padding-top: 60%; /* Aspect ratio 5:3 */
+    position: relative;
+    background-color: #e9ecef;
+}
+
+.news-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease; /* Añadimos una transición para el efecto de zoom */
+}
+
+.news-card-content {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.05); /* Aplicamos el zoom a la imagen en hover */
+}
+
+.news-card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.news-card-category {
+    display: inline-block;
+    background-color: rgba(229, 36, 35, 0.1);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.news-card-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.news-card-title {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.news-card-excerpt {
+    color: var(--muted);
+    flex-grow: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.news-card-readmore {
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5ch;
+}
+
+/* 🎯 OBJETO SOCIAL SECTION */
+.objetivo-social-section {
+    background-color: #1c1c1c; /* Fondo oscuro para mayor impacto */
+    color: white;
+    padding: 7rem 0; /* Aumentamos el espaciado para mayor separación */
+}
+
+.objetivo-social-content {
+    max-width: 800px; /* Ancho máximo para legibilidad */
+    margin: 0 auto;
+}
+
+.objetivo-social-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.objetivo-social-text {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* 🚀 NUESTROS PROGRAMAS SECTION */
+.programas-section {
+    background-color: #f8f9fa; /* Mantenemos el color de fondo claro */
+    background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.04) 1px, transparent 0); /* Patrón de puntos sutil */
+    background-size: 25px 25px; /* Espaciado de los puntos */
+}
+
+.programas-section > .container > p {
+    max-width: 70ch; /* Improve readability of the intro paragraph */
+    margin-bottom: var(--spacing-lg);
+}
+
+.programas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.programa-card {
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    padding: var(--spacing-lg);
+    text-align: center;
+    border: 2px solid transparent; /* Borde transparente por defecto */
+    box-shadow: var(--shadow-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Añadimos border-color a la transición */
+    display: flex;
+    flex-direction: column;
+}
+
+.programa-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+    border-color: var(--accent); /* Mostramos el borde de color en hover */
+}
+
+.programa-card-icon {
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.programa-card-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.programa-card-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.programa-card-text {
+    color: var(--muted);
+    flex-grow: 1;
+    margin-bottom: var(--spacing-lg);
+}
+
+.programa-card-link {
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* 🏛️ PILARES (MISIÓN, VISIÓN, PROPÓSITO) */
+.pilares-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.pilar-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pilar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2);
+}
+
+.pilar-icon {
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.pilar-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pilar-text {
+    color: var(--muted);
+    font-size: 1rem;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-lg);
+}
+
+.pilar-card .btn {
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    border-radius: var(--radius); /* Asegura que los botones dentro de las tarjetas sean redondeados */
+}
+
+/* 📞 PÁGINA DE CONTACTO */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.contact-form .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(229, 36, 35, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-info-container h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-info-list {
+    list-style: none;
+    margin: var(--spacing-lg) 0;
+}
+
+.contact-info-list li {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer en móvil: 1 columna */
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 📰 PÁGINA DE DETALLE DE NOTICIA */
+.single-article {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.article-category {
+    display: inline-block;
+    background-color: rgba(229, 36, 35, 0.1);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.article-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+.article-excerpt {
+    font-size: 1.2rem;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.article-featured-image {
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.article-featured-image img {
+    width: 100%;
+    display: block;
+}
+
+.article-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+@media (min-width: 900px) {
+    .article-body {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.article-content {
+    max-width: 75ch; /* Ancho óptimo para la legibilidad del texto */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.article-content p,
+.article-content ul,
+.article-content h2,
+.article-content blockquote {
+    margin-bottom: var(--spacing-md);
+}
+
+.article-content h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.8rem;
+    margin-top: var(--spacing-lg);
+}
+
+.article-content ul {
+    padding-left: var(--spacing-md);
+}
+
+.article-content blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: var(--spacing-md);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.article-content blockquote cite {
+    display: block;
+    margin-top: var(--spacing-sm);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.article-sidebar h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+}
